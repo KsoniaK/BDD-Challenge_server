@@ -10,6 +10,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use(cors({
+  origin: "https://ksoniak.github.io",
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type"
+}));
+
+
 // Servir les images
 app.use("/images", express.static(path.join(__dirname, "images")));
 
